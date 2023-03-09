@@ -18,7 +18,8 @@ defmodule Registrocolegio.Docentes do
 
   """
   def list_docentes do
-    Repo.all(Docente) |> Repo.preload(:materias)
+    Repo.all(Docente)
+
   end
 
   @doc """
@@ -35,7 +36,7 @@ defmodule Registrocolegio.Docentes do
       ** (Ecto.NoResultsError)
 
   """
-  def get_docente!(id), do: Repo.get!(Docente, id) |> Repo.preload(:materias)
+  def get_docente!(id), do: Repo.get!(Docente, id)
 
   @doc """
   Creates a docente.

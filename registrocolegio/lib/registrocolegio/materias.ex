@@ -18,7 +18,7 @@ defmodule Registrocolegio.Materias do
 
   """
   def list_materias do
-    Repo.all(Materia)
+    Repo.all(Materia) |> Repo.preload(:docente)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule Registrocolegio.Materias do
       ** (Ecto.NoResultsError)
 
   """
-  def get_materia!(id), do: Repo.get!(Materia, id)
+  def get_materia!(id), do: Repo.get!(Materia, id) |> Repo.preload(:docente)
 
   @doc """
   Creates a materia.

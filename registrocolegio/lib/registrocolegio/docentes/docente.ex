@@ -19,7 +19,7 @@ defmodule Registrocolegio.Docentes.Docente do
   @doc false
   def changeset(docente, attrs) do
     docente
-    |> cast(attrs, [:nombres, :edad, :correo, :telefono, :especializacion, :instituto_id])
+    |> cast(attrs, [:nombres, :edad, :correo, :telefono, :especializacion])
     |> validate_required([:nombres, :edad, :correo, :telefono, :especializacion])
   end
 end

@@ -9,7 +9,7 @@ defmodule Registrocolegio.Repo.Migrations.CreateDocentes do
       add :correo, :string
       add :telefono, :string
       add :especializacion, :string
-      add :instituto_id, references(:institutos, on_delete: :nothing, type: :binary_id)
+      add :instituto_id, references(:institutos, on_delete:, :delete_all type: :binary_id)
 
       timestamps()
     end

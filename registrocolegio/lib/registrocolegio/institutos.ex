@@ -18,7 +18,8 @@ defmodule Registrocolegio.Institutos do
 
   """
   def list_institutos do
-    Repo.all(Instituto) |> Repo.preload(:docentes)
+    Repo.all(Instituto)
+    #|> Repo.preload(:docentes)
   end
 
   @doc """
@@ -35,7 +36,7 @@ defmodule Registrocolegio.Institutos do
       ** (Ecto.NoResultsError)
 
   """
-  def get_instituto!(id), do: Repo.get!(Instituto, id) |> Repo.preload(:docentes)
+  def get_instituto!(id), do: Repo.get!(Instituto, id) #|> Repo.preload(:docentes)
 
 
   @doc """

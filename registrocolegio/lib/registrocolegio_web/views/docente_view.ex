@@ -13,10 +13,10 @@ defmodule RegistrocolegioWeb.DocenteView do
   def render("docente.json", %{docente: docente}) do
 
     instituto = case is_list(docente.instituto) do
-      false -> []
-      true -> docente.instituto
+      false -> %{}
+      true -> [docente.instituto]
     |> Enum.map(& Map.from_struct(&1))
-    |> Enum.map(& Enum.reduce([:docentes, :materias, :inserted_at, :updated_at,], &1, fn key, acc -> Map.delete(key, acc) end))
+    |> Enum.map(& Enum.reduce([:_meta_, :docentes, :materias, :instituto_id, :inserted_at, :updated_at,], &1, fn key, acc -> Map.delete(key, acc) end))
     end
     %{
       id: docente.id,
@@ -25,7 +25,7 @@ defmodule RegistrocolegioWeb.DocenteView do
       correo: docente.correo,
       telefono: docente.telefono,
       especializacion: docente.especializacion,
-      instituto: List.first(instituto)
+      instituto: instituto
     }
   end
 end
