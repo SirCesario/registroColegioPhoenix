@@ -16,7 +16,7 @@ defmodule RegistrocolegioWeb.InstitutoView do
       false -> []
       true -> instituto.docentes
       |> Enum.map(& Map.from_struct(&1))
-      |> Enum.map(& Enum.reduce([:instituto, :instituto_id,  :inserted_at, :updated_at,], &1, fn key, acc -> Map.delete(key, acc) end))
+      |> Enum.map(& Enum.reduce([:instituto, :instituto_id, :inserted_at, :updated_at,], &1, fn key, acc -> Map.delete(key, acc) end))
     end
     %{
       id: instituto.id,

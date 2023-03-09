@@ -11,6 +11,7 @@ defmodule Registrocolegio.Institutos.Instituto do
     field :telefono, :string
     has_many :docentes, Registrocolegio.Docentes.Docente
 
+
     timestamps()
   end
 

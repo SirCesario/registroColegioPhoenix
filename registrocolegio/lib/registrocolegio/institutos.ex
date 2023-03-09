@@ -37,6 +37,7 @@ defmodule Registrocolegio.Institutos do
   """
   def get_instituto!(id), do: Repo.get!(Instituto, id) |> Repo.preload(:docentes)
 
+
   @doc """
   Creates a instituto.
 

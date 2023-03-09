@@ -37,7 +37,7 @@ defmodule RegistrocolegioWeb.InstitutoController do
     instituto = Institutos.get_instituto!(id)
 
     with {:ok, %Instituto{}} <- Institutos.delete_instituto(instituto) do
-      send_resp(conn, :no_content, "")
+      send_resp(conn, :no_content, "No se puede eliminar un Instituto si aun tiene Docentes Asignados")
     end
   end
 end
