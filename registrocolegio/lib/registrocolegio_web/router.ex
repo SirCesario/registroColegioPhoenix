@@ -13,9 +13,14 @@ defmodule RegistrocolegioWeb.Router do
     pipe_through :api
 
     resources "/institutos", InstitutoController, except: [:edit, :new]
+    get "/institutos/ciudad/:ciudad", InstitutoController, :traerciudades
+
+
+
 
 
     resources "/docentes", DocenteController, except: [:edit, :new]
+    #get "/api/docentes/mayores", DocenteController, :mayores
 
 
 

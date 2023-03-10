@@ -37,7 +37,7 @@ defmodule Registrocolegio.Docentes do
   """
   def get_docente!(id), do: Repo.get!(Docente, id)
 
-  
+
 
   @spec create_docente(
           :invalid
@@ -60,7 +60,6 @@ defmodule Registrocolegio.Docentes do
     |> Docente.changeset(attrs)
     |> Repo.insert()
   end
-
 
   @doc """
   Updates a docente.

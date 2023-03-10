@@ -1,6 +1,7 @@
 defmodule RegistrocolegioWeb.InstitutoController do
   use RegistrocolegioWeb, :controller
 
+
   alias Registrocolegio.Institutos
   alias Registrocolegio.Institutos.Instituto
 
@@ -40,4 +41,11 @@ defmodule RegistrocolegioWeb.InstitutoController do
       send_resp(conn, :no_content, "")
     end
   end
+
+
+  def traerciudades(conn, %{"ciudad" => ciudad}) do
+    institutos = Institutos.traerciudades(ciudad)
+    render(conn, "index.json", institutos: institutos)
+  end
+
 end

@@ -20,6 +20,6 @@ defmodule Registrocolegio.Institutos.Instituto do
     instituto
     |> cast(attrs, [:nombre, :direccion, :ciudad, :telefono])
     |> validate_required([:nombre, :direccion, :ciudad, :telefono])
-    
+
   end
 end
