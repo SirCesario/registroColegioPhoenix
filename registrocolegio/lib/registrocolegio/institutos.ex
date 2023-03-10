@@ -39,6 +39,7 @@ defmodule Registrocolegio.Institutos do
   def get_instituto!(id), do: Repo.get!(Instituto, id) #|> Repo.preload(:docentes)
 
 
+
   @doc """
   Creates a instituto.
 
@@ -56,6 +57,11 @@ defmodule Registrocolegio.Institutos do
     |> Instituto.changeset(attrs)
     |> Repo.insert()
   end
+
+  #Creacion de Validacion Para Cantidad de Docentes en Un Instituto
+
+
+
 
   @doc """
   Updates a instituto.

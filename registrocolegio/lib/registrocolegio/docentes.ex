@@ -5,7 +5,6 @@ defmodule Registrocolegio.Docentes do
 
   import Ecto.Query, warn: false
   alias Registrocolegio.Repo
-
   alias Registrocolegio.Docentes.Docente
 
   @doc """
@@ -38,6 +37,12 @@ defmodule Registrocolegio.Docentes do
   """
   def get_docente!(id), do: Repo.get!(Docente, id)
 
+  
+
+  @spec create_docente(
+          :invalid
+          | %{optional(:__struct__) => none, optional(atom | binary) => any}
+        ) :: any
   @doc """
   Creates a docente.
 
@@ -55,6 +60,7 @@ defmodule Registrocolegio.Docentes do
     |> Docente.changeset(attrs)
     |> Repo.insert()
   end
+
 
   @doc """
   Updates a docente.

@@ -18,6 +18,7 @@ defmodule RegistrocolegioWeb.Router do
     resources "/docentes", DocenteController, except: [:edit, :new]
 
 
+
     resources "/materias", MateriaController, except: [:edit, :new]
   end
 end

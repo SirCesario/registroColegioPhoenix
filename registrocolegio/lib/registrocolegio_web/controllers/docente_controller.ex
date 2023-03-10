@@ -1,6 +1,8 @@
 defmodule RegistrocolegioWeb.DocenteController do
   use RegistrocolegioWeb, :controller
 
+
+
   alias Registrocolegio.Docentes
   alias Registrocolegio.Docentes.Docente
 
@@ -11,6 +13,7 @@ defmodule RegistrocolegioWeb.DocenteController do
     render(conn, "index.json", docentes: docentes)
   end
 
+
   def create(conn, %{"docente" => docente_params}) do
     with {:ok, %Docente{} = docente} <- Docentes.create_docente(docente_params) do
       conn
@@ -19,6 +22,8 @@ defmodule RegistrocolegioWeb.DocenteController do
       |> render("show.json", docente: docente)
     end
   end
+
+
 
   def show(conn, %{"id" => id}) do
     docente = Docentes.get_docente!(id)
